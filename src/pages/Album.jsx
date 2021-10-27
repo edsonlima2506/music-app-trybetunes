@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import '../styles/Album.css'
 
 class Album extends React.Component {
   constructor() {
@@ -33,6 +34,7 @@ class Album extends React.Component {
       this.setState({
         artistName: albumResult[0].artistName,
         albumName: albumResult[0].collectionName,
+        albumImage: albumResult[0].artworkUrl100,
         albumMusics: albumResult,
         haveAlbum: true,
       });
@@ -40,11 +42,14 @@ class Album extends React.Component {
   }
 
   renderAlbum() {
-    const { artistName, albumName } = this.state;
+    const { artistName, albumName, albumImage } = this.state;
     return (
-      <span>
-        <h1 data-testid="artist-name">{ artistName }</h1>
-        <h2 data-testid="album-name">{ albumName }</h2>
+      <span className="album-infos">
+        <img src={ albumImage } alt="" />
+        <span className="album-artis-name">
+          <h1 data-testid="album-name">{ albumName }</h1>
+          <h3 data-testid="artist-name">{ artistName }</h3>
+        </span>
       </span>
     );
   }
@@ -68,8 +73,10 @@ class Album extends React.Component {
     return (
       <div data-testid="page-album">
         <Header />
-        { haveAlbum && this.renderAlbum() }
-        { haveAlbum && this.renderMusics() }
+        <div className="album">
+          { haveAlbum && this.renderAlbum() }
+          { haveAlbum && this.renderMusics() }
+        </div>
       </div>
     );
   }

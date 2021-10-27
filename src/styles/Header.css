@@ -39,6 +39,19 @@
     margin-right: 10px;
 }
 
+hr {
+    width: 80%; height: 2px;
+    background: #282828;
+    margin-top: 15px;
+    border: none;
+}
+
+.em-breve {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 .copy {
     display: flex;
     justify-content: center;

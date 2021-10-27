@@ -1,0 +1,12 @@
+audio {
+    margin-left: 150px;
+}
+
+audio:hover {
+    background-color: lightgrey;
+}
+
+.music-player-name {
+    display: flex;
+    align-items: center;
+}

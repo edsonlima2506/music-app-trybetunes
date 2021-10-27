@@ -5,6 +5,10 @@ import logo from '../images/logo.png';
 import search from '../images/pesquisar.png';
 import favorite from '../images/favorito.png';
 import profile from '../images/perfil.png';
+import podcast from '../images/podcast.png';
+import audiobook from '../images/audiobook.png';
+import videoclip from '../images/videoclip.png';
+import envio from '../images/envio.png';
 
 class Header extends React.Component {
 
@@ -33,6 +37,38 @@ class Header extends React.Component {
           className="link-nav">
             <img src={ profile } alt="lupa" className="icon" />
             Perfil
+            </Link>
+        </nav>
+        <hr />
+        <nav>
+          <h1 className="em-breve">Em breve</h1>
+          <Link
+            to="/search"
+            data-testid="link-to-search"
+            className="link-nav">
+              <img src={ podcast } alt="lupa" className="icon" />
+              Podcasts
+          </Link>
+          <Link
+          to="/search"
+          data-testid="link-to-favorites"
+          className="link-nav">
+            <img src={ audiobook } alt="lupa" className="icon" />
+            AudioBooks
+          </Link>
+          <Link
+          to="/search"
+          data-testid="link-to-profile"
+          className="link-nav">
+            <img src={ videoclip } alt="lupa" className="icon" />
+            Video clipes
+            </Link>
+            <Link
+          to="/search"
+          data-testid="link-to-profile"
+          className="link-nav">
+            <img src={ envio } alt="lupa" className="icon" />
+            Seus uploads
             </Link>
         </nav>
         <div className="copy">&copy; <h3>Edson Lima</h3></div>

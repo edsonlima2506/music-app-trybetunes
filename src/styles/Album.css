@@ -1,0 +1,12 @@
+.album {
+    margin-left: 350px;
+}
+
+.album-infos {
+    display: flex;
+}
+
+.album-artis-name {
+    color: #fff;
+    margin: 30px;
+}
