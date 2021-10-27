@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import search from '../images/pesquisar.png'
 import '../styles/Search.css';
 
 class Search extends React.Component {
@@ -53,20 +54,24 @@ class Search extends React.Component {
       <div data-testid="page-search" className="search">
         <Header />
         <form>
-          <input
-            id="inputMusic"
-            type="text"
-            data-testid="search-artist-input"
-            onChange={ this.enableButon }
-          />
-          <button
-            type="button"
-            data-testid="search-artist-button"
-            disabled={ buttonDisable }
-            onClick={ this.searchMusic }
-          >
-            Pesquisar
-          </button>
+          <div className="search-input-button">
+            <input
+              id="inputMusic"
+              type="text"
+              data-testid="search-artist-input"
+              onChange={ this.enableButon }
+              className="input-search"
+            />
+            <button
+              type="button"
+              data-testid="search-artist-button"
+              disabled={ buttonDisable }
+              onClick={ this.searchMusic }
+              className="button-search"
+            >
+              <img src={ search } alt="" className="icon"/>
+            </button>
+          </div>
         </form>
         <h1>{ result }</h1>
         { albumAtual.length === 0 ? <p>Nenhum álbum foi encontrado</p>
