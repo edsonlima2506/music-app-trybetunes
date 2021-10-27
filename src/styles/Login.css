@@ -1,19 +1,37 @@
-body {
+.login {
     background-color: #020202;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.login {
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 400px;
     height: 500px;
     background-color: #313133;
+}
+
+.name-input {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  width: 60%; height: 40px;
+  background: none;
+  border: #1ED75F 2px solid;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 html, body {
@@ -101,4 +119,8 @@ html, body {
       height: 300px;
       opacity: 0;
     }
+  }
+
+  .loading {
+    color: #fff;
   }

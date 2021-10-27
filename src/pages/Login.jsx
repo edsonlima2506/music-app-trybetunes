@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
-import '../styles/Login.css'
+import '../styles/Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -40,12 +40,14 @@ class Login extends React.Component {
     const { isDisabled, loading } = this.state;
     return (
       <div data-testid="page-login" className="login">
-        <input
-          type="text"
-          data-testid="login-name-input"
-          className="nameInput"
-          onChange={ this.isDisabled }
-        />
+        <section className="login-card">
+            <input
+            type="text"
+            data-testid="login-name-input"
+            className="name-input"
+            onChange={ this.isDisabled }
+            placeholder="Insira seu nome"
+          />
         <button
           className="login-button"
           data-testid="login-submit-button"
@@ -55,7 +57,8 @@ class Login extends React.Component {
         >
           Entrar
         </button>
-        { loading === true && <p>Carregando...</p> }
+        { loading === true && <p className="loading">Carregando...</p> }
+        </section>
       </div>
     );
   }
