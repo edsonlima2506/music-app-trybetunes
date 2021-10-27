@@ -1,8 +1,16 @@
 .menu-lateral {
     height: 100vh;
     width: 300px;
-    background-color: black;
+    background-color: #000;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+}
+
+.logo {
+    width: 200px; height: 200px;
 }
 
 .menu-lateral nav {
@@ -12,5 +20,33 @@
 
 .link-nav {
     text-decoration: none;
-    color: darkgrey;
+    color: #444444;
+    width: 280px; height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.link-nav:hover {
+    color: #fff;
+    background-color: #282828;
+}
+
+.icon {
+    width: 20px; height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    color: #444444;
+}
+
+.copy h3 {
+    margin-left: 5px;
 }
