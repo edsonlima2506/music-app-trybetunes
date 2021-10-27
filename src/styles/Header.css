@@ -1,0 +1,16 @@
+.menu-lateral {
+    height: 100vh;
+    width: 300px;
+    background-color: black;
+    color: #fff;
+}
+
+.menu-lateral nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-nav {
+    text-decoration: none;
+    color: darkgrey;
+}

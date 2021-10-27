@@ -48,6 +48,7 @@ class Login extends React.Component {
             onChange={ this.isDisabled }
             placeholder="Insira seu nome"
           />
+          <div className="center">
         <button
           className="login-button"
           data-testid="login-submit-button"
@@ -57,6 +58,8 @@ class Login extends React.Component {
         >
           Entrar
         </button>
+        <p className="text">Mais que um player, uma experiência</p>
+          </div>
         { loading === true && <p className="loading">Carregando...</p> }
         </section>
       </div>

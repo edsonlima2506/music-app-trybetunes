@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import '../styles/Search.css';
 
 class Search extends React.Component {
   constructor() {
@@ -50,7 +50,7 @@ class Search extends React.Component {
     const { buttonDisable, resultadoDaBuscaTexto, albumAtual } = this.state;
     const result = `Resultado de álbuns de: ${resultadoDaBuscaTexto}`;
     return (
-      <div data-testid="page-search">
+      <div data-testid="page-search" className="search">
         <Header />
         <form>
           <input
