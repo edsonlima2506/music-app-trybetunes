@@ -6,7 +6,11 @@
     display: flex;
 }
 
-.album-artis-name {
+.album-images {
+    margin-top: 30px;
+}
+
+.album-artist-name {
     color: #fff;
     margin: 30px;
 }

@@ -52,6 +52,7 @@ class MusicCard extends React.Component {
     return (
       <div>
         <div key={ objMusic.trackName } className="music-player-name">
+          <img src={ objMusic.artworkUrl60 } alt="" />
           <p>{ objMusic.trackName }</p>
           <audio
             data-testid="audio-component"
@@ -69,6 +70,7 @@ class MusicCard extends React.Component {
               data-testid={ `checkbox-music-${trackId}` }
               checked={ isFavoriteSong }
               onChange={ isFavoriteSong ? this.isNotFavorite : this.isFavorite }
+              className="checkbox-favorite"
             />
         </div>
         { loading && <h3>Carregando...</h3> }

@@ -45,8 +45,8 @@ class Album extends React.Component {
     const { artistName, albumName, albumImage } = this.state;
     return (
       <span className="album-infos">
-        <img src={ albumImage } alt="" />
-        <span className="album-artis-name">
+        <img src={ albumImage } alt="" className="album-images"/>
+        <span className="album-artist-name">
           <h1 data-testid="album-name">{ albumName }</h1>
           <h3 data-testid="artist-name">{ artistName }</h3>
         </span>
@@ -75,7 +75,9 @@ class Album extends React.Component {
         <Header />
         <div className="album">
           { haveAlbum && this.renderAlbum() }
-          { haveAlbum && this.renderMusics() }
+          <div className="musics">
+            { haveAlbum && this.renderMusics() }
+          </div>
         </div>
       </div>
     );

@@ -1,12 +1,36 @@
 audio {
     margin-left: 150px;
+    width: 500px;
+    border-radius: 10px;
 }
 
-audio:hover {
-    background-color: lightgrey;
+.musics {
+    margin-top: 50px;
+}
+
+.checkbox-favorite:checked {
+    background: #1ED75F;
 }
 
 .music-player-name {
     display: flex;
     align-items: center;
+    margin-top: 15px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.music-player-name p {
+    width: 250px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.music-player-name input {
+    margin-left: 10px;
+}
+
+.music-player-name:hover {
+    background-color: #282828;
 }
