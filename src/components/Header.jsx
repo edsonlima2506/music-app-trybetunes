@@ -28,14 +28,14 @@ class Header extends React.Component {
           to="/favorites"
           data-testid="link-to-favorites"
           className="link-nav">
-            <img src={ favorite } alt="lupa" className="icon" />
+            <img src={ favorite } alt="coração" className="icon" />
             Favoritas
           </Link>
           <Link
           to="/profile"
           data-testid="link-to-profile"
           className="link-nav">
-            <img src={ profile } alt="lupa" className="icon" />
+            <img src={ profile } alt="pessoa" className="icon" />
             Perfil
             </Link>
         </nav>
@@ -46,28 +46,28 @@ class Header extends React.Component {
             to="/search"
             data-testid="link-to-search"
             className="link-nav">
-              <img src={ podcast } alt="lupa" className="icon" />
+              <img src={ podcast } alt="microfone" className="icon" />
               Podcasts
           </Link>
           <Link
           to="/search"
           data-testid="link-to-favorites"
           className="link-nav">
-            <img src={ audiobook } alt="lupa" className="icon" />
+            <img src={ audiobook } alt="livro" className="icon" />
             AudioBooks
           </Link>
           <Link
           to="/search"
           data-testid="link-to-profile"
           className="link-nav">
-            <img src={ videoclip } alt="lupa" className="icon" />
+            <img src={ videoclip } alt="video" className="icon" />
             Video clipes
             </Link>
             <Link
           to="/search"
           data-testid="link-to-profile"
           className="link-nav">
-            <img src={ envio } alt="lupa" className="icon" />
+            <img src={ envio } alt="envio" className="icon" />
             Seus uploads
             </Link>
         </nav>

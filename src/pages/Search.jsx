@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import search from '../images/pesquisar.png';
 import play from '../images/play.png';
+import profile from '../images/perfil.png';
+import { getUser } from '../services/userAPI';
 import '../styles/Search.css';
 
 class Search extends React.Component {
@@ -15,10 +17,16 @@ class Search extends React.Component {
       music: '',
       resultadoDaBuscaTexto: '',
       albumAtual: [],
+      userName: '',
     };
 
     this.enableButon = this.enableButon.bind(this);
     this.searchMusic = this.searchMusic.bind(this);
+    this.recoverUser = this.recoverUser.bind(this);
+  }
+
+  componentDidMount() {
+    this.recoverUser()
   }
 
   searchMusic = async () => {
@@ -48,8 +56,15 @@ class Search extends React.Component {
     }
   }
 
+  recoverUser = async () => {
+    const { name } = await getUser()
+    this.setState({
+      userName: name,
+    });
+  }
+
   render() {
-    const { buttonDisable, resultadoDaBuscaTexto, albumAtual } = this.state;
+    const { buttonDisable, resultadoDaBuscaTexto, albumAtual, userName } = this.state;
     const result = `Exibindo álbuns de: ${resultadoDaBuscaTexto}`;
     return (
       <div data-testid="page-search" className="search">
@@ -73,6 +88,10 @@ class Search extends React.Component {
             >
               <img src={ search } alt="" className="icon"/>
             </button>
+            <div className="user-div">
+              <img src={ profile } alt="lupa" className="user-icon" />
+              <h2>{ `Olá, ${ userName }!` }</h2>
+            </div>
           </div>
         </form>
         { albumAtual.length !== 0 && <h2 className="result-text">{ result }</h2> }

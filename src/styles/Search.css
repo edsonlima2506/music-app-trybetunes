@@ -9,6 +9,7 @@ body {
 
 .search-input-button {
     display: flex;
+    align-items: center;
     margin-top: 30px;
     margin-left: 350px;
 }
@@ -94,4 +95,24 @@ body {
     width: 30px; height: 30px;
     margin-left: 140px;
     margin-top: 25px;
+}
+
+.user-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 150px; height: 50px;
+    background-color: #000;
+    border-radius: 25px;
+    margin-left: 30%;
+}
+
+.user-div h2 {
+    color: #ffffff;
+    font-size: small;
+    margin-left: -35px;
+}
+
+.user-icon {
+    width: 20px; height: 20px;
 }
