@@ -19,4 +19,14 @@ estados e eventos. Os testes foram feitos com RTL (React Test Library).
   <img align="center" alt="Edson-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="Edson-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
   <img align="center" alt="Edson-React" height="30" width="40"src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+  <img align="center" alt="Edson-Canva" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" />
 </div>
+
+# Como acessar o projeto?
+
+Basta acessar o link: https://music-app-trybetunes.vercel.app/
+
+# Como posso acessar o código?
+
+1- Clone o repositório com o comando:
+git clone 
