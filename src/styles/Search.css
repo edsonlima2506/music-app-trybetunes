@@ -116,3 +116,8 @@ body {
 .user-icon {
     width: 20px; height: 20px;
 }
+
+.imagem-inicial {
+    width: 1000px;
+    margin-left: 300px;
+}

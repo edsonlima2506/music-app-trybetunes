@@ -5,6 +5,7 @@ import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import search from '../images/pesquisar.png';
 import play from '../images/play.png';
 import profile from '../images/perfil.png';
+import trybetunes from '../images/TrybeTunes.png';
 import { getUser } from '../services/userAPI';
 import '../styles/Search.css';
 
@@ -36,7 +37,7 @@ class Search extends React.Component {
     if (album.length !== 0) {
       this.setState({
         music: '',
-        resultadoDaBuscaTexto: inputMusic.value,
+        resultadoDaBuscaTexto: String(inputMusic.value),
         albumAtual: album,
       });
       console.log(resultadoDaBuscaTexto);
@@ -95,7 +96,7 @@ class Search extends React.Component {
           </div>
         </form>
         { albumAtual.length !== 0 && <h2 className="result-text">{ result }</h2> }
-        { albumAtual.length === 0 ? <p>Nenhum álbum foi encontrado</p>
+        { albumAtual.length === 0 ? <img src={ trybetunes } alt="" className="imagem-inicial"/>
           : <div className="albums-cards"> { albumAtual.map((collection) => (
               <section key={ collection.collectionId } className="album-card">
                 <span className="image-infos">
