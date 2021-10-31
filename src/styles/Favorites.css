@@ -1,3 +1,8 @@
 .favorite-musics {
     margin-left: 350px;
+    padding-top: 30px;
+}
+
+.favorite-musics h1 {
+    color: #fff;
 }

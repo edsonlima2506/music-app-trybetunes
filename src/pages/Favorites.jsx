@@ -51,7 +51,7 @@ class Favorites extends React.Component {
       <div data-testid="page-favorites">
         <Header />
         <div className="favorite-musics">
-          <h1>Suas músicas favoritas!</h1>
+          <h1>Você não cansa de ouvir:</h1>
           <div>
             { favoritesSongs.length > 0 && this.renderMusics() }
           </div>
