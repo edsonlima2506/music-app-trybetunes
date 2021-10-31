@@ -41,13 +41,16 @@ class Login extends React.Component {
     return (
       <div data-testid="page-login" className="login">
         <section className="login-card">
-            <input
-            type="text"
-            data-testid="login-name-input"
-            className="name-input"
-            onChange={ this.isDisabled }
-            placeholder="Insira seu nome"
-          />
+          <span>
+            <p className="name-label">Seu nome</p>
+              <input
+              type="text"
+              data-testid="login-name-input"
+              className="name-input"
+              onChange={ this.isDisabled }
+              placeholder="Insira seu nome"
+            />
+          </span>
           <div className="center">
         <button
           className="login-button"

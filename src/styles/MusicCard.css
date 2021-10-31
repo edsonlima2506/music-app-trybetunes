@@ -8,10 +8,6 @@ audio {
     margin-top: 50px;
 }
 
-.checkbox-favorite:checked {
-    background: #1ED75F;
-}
-
 .music-player-name {
     display: flex;
     align-items: center;

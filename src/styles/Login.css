@@ -4,11 +4,13 @@
 }
 
 .login {
-    background-color: #1E1E1E;
+    background-image: url("../images/bglogin.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     height: 100vh;
 }
 
@@ -27,16 +29,24 @@
     width: 400px;
     height: 500px;
     background-color: #313133;
+    position: relative;
+    z-index: 2;
+    margin-left: 250px;
 }
 
 .name-input {
   font-family: 'Roboto', sans-serif;
   color: #fff;
-  width: 60%; height: 40px;
+  width: 250px; height: 40px;
   background: none;
   border: #1ED75F 2px solid;
   border-radius: 5px;
   padding: 5px;
+}
+
+.name-label {
+  color: #1ED75F;
+  margin-bottom: 5px;
 }
 
 html, body {
@@ -74,8 +84,8 @@ html, body {
 .login-button::before {
   content: '';
     border-radius: 1000px;
-    min-width: calc(260px + 12px);
-    min-height: calc(50px + 12px);
+    min-width: calc(250px + 12px);
+    min-height: calc(40px + 12px);
     border: 2px solid #1ED75F;
     box-shadow: 0 0 60px #1ED75F;
     position: absolute;
