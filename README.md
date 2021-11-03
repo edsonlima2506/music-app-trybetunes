@@ -11,6 +11,8 @@ recuperar dados do usuário. Foi utilizado o React para a criação do projeto <
 trabalhando com React Route para criação de páginas dinâmicas, componentes React <br>
 estados e eventos. Os testes foram feitos com RTL (React Test Library).
 
+# Resultado final:
+
 # Tecnologias
 
  
