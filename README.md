@@ -34,8 +34,11 @@ git clone `git@github.com:edsonlima2506/music-app-trybetunes.git`
 2- Baixe as dependências do projeto com o comando: <br>
 `npm install`
 
-3- Crie uma nova branch: <br>
-`git checkout -b seu-nome`
-  3.1 - Abra o seu editor de código: <br>
+3- Visualize o projeto com o comando: <br>
+`npm start`
+
+4- Crie uma nova branch: <br>
+`git checkout -b seu-nome` <br>
+  4.1 - Abra o seu editor de código: <br>
     `code .`
 
