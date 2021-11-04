@@ -1,20 +1,40 @@
 @media (max-width: 600px) {
 
-    body {
+    .menu-lateral {
+        display: none;
+    }
+
+    /* Tela de pesquisa */
+
+    .search {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .menu-lateral {
-        display: none;
+    .search .imagem-inicial {
+        margin-left: 0px;
+        width: 80%;
     }
 
-    .imagem-inicial {
-        margin-left: 250px;
-    }
-
-    .albums-cards {
+    .search .albums-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-left: 0;
+    }
+
+    .search .album-card {
+        margin-left: 0;
+    }
+
+    .search .result-text {
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    .search .input-search {
+        font-size: 8px;
+        width: 450px;
     }
 }
