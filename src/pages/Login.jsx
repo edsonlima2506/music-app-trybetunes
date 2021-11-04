@@ -48,7 +48,6 @@ class Login extends React.Component {
               data-testid="login-name-input"
               className="name-input"
               onChange={ this.isDisabled }
-              placeholder="Insira seu nome"
             />
           </span>
           <div className="center">

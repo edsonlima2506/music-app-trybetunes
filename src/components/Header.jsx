@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css';
+import '../styles/Mobile.css';
 import logo from '../images/logo.png';
 import search from '../images/pesquisar.png';
 import favorite from '../images/favorito.png';

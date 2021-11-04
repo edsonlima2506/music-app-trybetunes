@@ -8,6 +8,7 @@ import profile from '../images/perfil.png';
 import trybetunes from '../images/TrybeTunes.png';
 import { getUser } from '../services/userAPI';
 import '../styles/Search.css';
+import '../styles/Mobile.css';
 
 class Search extends React.Component {
   constructor() {
