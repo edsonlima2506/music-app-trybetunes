@@ -119,6 +119,8 @@ body {
 }
 
 .imagem-inicial {
-    width: 70%;
-    margin-left: 25%;
+    width: 65%;
+    margin-left: 28%;
+    margin-top: 30px;
+    border-radius: 20px;
 }

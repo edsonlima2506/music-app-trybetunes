@@ -5,7 +5,7 @@ import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import search from '../images/pesquisar.png';
 import play from '../images/play.png';
 import profile from '../images/perfil.png';
-import trybetunes from '../images/TrybeTunes.png';
+import trybetunes from '../images/destaque.png';
 import { getUser } from '../services/userAPI';
 import '../styles/Search.css';
 import '../styles/Mobile.css';
@@ -27,6 +27,7 @@ class Search extends React.Component {
     this.recoverUser = this.recoverUser.bind(this);
     this.renderAlbuns = this.renderAlbuns.bind(this);
     this.renderSearchArea = this.renderSearchArea.bind(this);
+    this.renderInicialScreen = this.renderInicialScreen.bind(this);
   }
 
   componentDidMount() {
@@ -117,6 +118,12 @@ class Search extends React.Component {
   </form>
   }
 
+  renderInicialScreen() {
+    return <div>
+      <img src={ trybetunes } alt="" className="imagem-inicial"/>
+    </div>
+  }
+
   render() {
     const { resultadoDaBuscaTexto, albumAtual } = this.state;
     const result = `Exibindo álbuns de: ${resultadoDaBuscaTexto}`;
@@ -125,8 +132,7 @@ class Search extends React.Component {
         <Header />
         { this.renderSearchArea() }
         { albumAtual.length !== 0 && <h2 className="result-text">{ result }</h2> }
-        { albumAtual.length === 0 ? <img src={ trybetunes } alt="" className="imagem-inicial"/>
-          : this.renderAlbuns() }
+        { albumAtual.length === 0 ? this.renderInicialScreen() : this.renderAlbuns() }
       </div>
     );
   }
