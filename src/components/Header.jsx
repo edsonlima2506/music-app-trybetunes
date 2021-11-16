@@ -5,7 +5,7 @@ import '../styles/Mobile.css';
 import logo from '../images/logo.png';
 import search from '../images/pesquisar.png';
 import favorite from '../images/favorito.png';
-import profile from '../images/perfil.png';
+import profileIcon from '../images/icone.png';
 import podcast from '../images/podcast.png';
 import audiobook from '../images/audiobook.png';
 import videoclip from '../images/videoclip.png';
@@ -36,7 +36,7 @@ class Header extends React.Component {
           to="/profile"
           data-testid="link-to-profile"
           className="link-nav">
-            <img src={ profile } alt="pessoa" className="icon" />
+            <img src={ profileIcon } alt="pessoa" className="icon" />
             Perfil
             </Link>
         </nav>

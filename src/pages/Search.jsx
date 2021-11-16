@@ -6,6 +6,8 @@ import search from '../images/pesquisar.png';
 import play from '../images/play.png';
 import profile from '../images/perfil.png';
 import trybetunes from '../images/destaque.png';
+import config from '../images/config.png';
+import notification from '../images/notification.png';
 import { getUser } from '../services/userAPI';
 import '../styles/Search.css';
 import '../styles/Mobile.css';
@@ -108,8 +110,12 @@ class Search extends React.Component {
         onClick={ this.searchMusic }
         className="button-search"
       >
-        <img src={ search } alt="" className="icon"/>
+        <img src={ search } alt="lupa" className="icon"/>
       </button>
+      <div className="icons">
+        <img src={ config } alt="engrenagem" className="icon"/>
+        <img src={ notification } alt="bell" className="icon"/>
+      </div>
       <div className="user-div">
         <img src={ profile } alt="lupa" className="user-icon" />
         <h2>{ `Olá, ${ userName }!` }</h2>
