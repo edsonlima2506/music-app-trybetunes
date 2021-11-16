@@ -25,6 +25,8 @@ class Search extends React.Component {
     this.enableButon = this.enableButon.bind(this);
     this.searchMusic = this.searchMusic.bind(this);
     this.recoverUser = this.recoverUser.bind(this);
+    this.renderAlbuns = this.renderAlbuns.bind(this);
+    this.renderSearchArea = this.renderSearchArea.bind(this);
   }
 
   componentDidMount() {
@@ -65,56 +67,66 @@ class Search extends React.Component {
     });
   }
 
+  renderAlbuns() {
+    const { albumAtual } = this.state;
+    return <div className="albums-cards"> { albumAtual.map((collection) => (
+      <section key={ collection.collectionId } className="album-card">
+        <span className="image-infos">
+          <img src={ collection.artworkUrl100 } alt="imagem album" className="album-image qualidade"/>
+          <span>
+            <h3 className="album-name info">{ collection.collectionName }</h3>
+            <h4 className="artist-name info">{ collection.artistName }</h4>
+            <Link
+              to={ `/album/${collection.collectionId}` }
+              data-testid={ `link-to-album-${collection.collectionId}` }
+              >
+              <img src={ play } alt="" className="play" />
+            </Link>
+          </span>
+        </span>
+      </section>
+    )) } </div>
+  }
+
+  renderSearchArea() {
+    const { buttonDisable, userName } = this.state;
+    return <form>
+    <div className="search-input-button">
+      <input
+        id="inputMusic"
+        type="text"
+        data-testid="search-artist-input"
+        onChange={ this.enableButon }
+        className="input-search"
+        placeholder="Busque por seu artista favorito"
+      />
+      <button
+        type="button"
+        data-testid="search-artist-button"
+        disabled={ buttonDisable }
+        onClick={ this.searchMusic }
+        className="button-search"
+      >
+        <img src={ search } alt="" className="icon"/>
+      </button>
+      <div className="user-div">
+        <img src={ profile } alt="lupa" className="user-icon" />
+        <h2>{ `Olá, ${ userName }!` }</h2>
+      </div>
+    </div>
+  </form>
+  }
+
   render() {
-    const { buttonDisable, resultadoDaBuscaTexto, albumAtual, userName } = this.state;
+    const { resultadoDaBuscaTexto, albumAtual } = this.state;
     const result = `Exibindo álbuns de: ${resultadoDaBuscaTexto}`;
     return (
       <div data-testid="page-search" className="search">
         <Header />
-        <form>
-          <div className="search-input-button">
-            <input
-              id="inputMusic"
-              type="text"
-              data-testid="search-artist-input"
-              onChange={ this.enableButon }
-              className="input-search"
-              placeholder="Busque por seu artista favorito"
-            />
-            <button
-              type="button"
-              data-testid="search-artist-button"
-              disabled={ buttonDisable }
-              onClick={ this.searchMusic }
-              className="button-search"
-            >
-              <img src={ search } alt="" className="icon"/>
-            </button>
-            <div className="user-div">
-              <img src={ profile } alt="lupa" className="user-icon" />
-              <h2>{ `Olá, ${ userName }!` }</h2>
-            </div>
-          </div>
-        </form>
+        { this.renderSearchArea() }
         { albumAtual.length !== 0 && <h2 className="result-text">{ result }</h2> }
         { albumAtual.length === 0 ? <img src={ trybetunes } alt="" className="imagem-inicial"/>
-          : <div className="albums-cards"> { albumAtual.map((collection) => (
-              <section key={ collection.collectionId } className="album-card">
-                <span className="image-infos">
-                  <img src={ collection.artworkUrl100 } alt="imagem album" className="album-image qualidade"/>
-                  <span>
-                    <h3 className="album-name info">{ collection.collectionName }</h3>
-                    <h4 className="artist-name info">{ collection.artistName }</h4>
-                    <Link
-                      to={ `/album/${collection.collectionId}` }
-                      data-testid={ `link-to-album-${collection.collectionId}` }
-                      >
-                      <img src={ play } alt="" className="play" />
-                    </Link>
-                  </span>
-                </span>
-              </section>
-            )) } </div> }
+          : this.renderAlbuns() }
       </div>
     );
   }
