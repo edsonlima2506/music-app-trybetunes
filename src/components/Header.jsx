@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 import '../styles/Mobile.css';
-import logo from '../images/logo.png';
 import search from '../images/pesquisar.png';
 import favorite from '../images/favorito.png';
 import profileIcon from '../images/icone.png';
@@ -10,13 +9,23 @@ import podcast from '../images/podcast.png';
 import audiobook from '../images/audiobook.png';
 import videoclip from '../images/videoclip.png';
 import envio from '../images/envio.png';
+import spotify from '../images/spotify.png'
 
 class Header extends React.Component {
 
   render() {
     return (
       <aside data-testid="header-component" className="menu-lateral">
-        <img src={ logo } alt="logo" className="logo" />
+          <div className="balls">
+            <div className="ball red"></div>
+            <div className="ball yellow"></div>
+            <div className="ball green"></div>
+          </div>
+          <div className="logoAndIcon">
+            <img src={ spotify } alt="logo spotify" className="logo"/>
+            &#9778;
+          </div>
+          <p className="menuText">MENU</p>
         <nav>
           <Link
             to="/search"
@@ -40,9 +49,8 @@ class Header extends React.Component {
             Perfil
             </Link>
         </nav>
-        <hr />
+        <p className="em-breve">EM BREVE</p>
         <nav>
-          <h1 className="em-breve">Em breve</h1>
           <Link
             to="/search"
             data-testid="link-to-search"
