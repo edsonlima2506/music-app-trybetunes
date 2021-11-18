@@ -5,7 +5,6 @@ import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import search from '../images/pesquisar.png';
 import play from '../images/play.png';
 import profile from '../images/perfil.png';
-import trybetunes from '../images/destaque.png';
 import config from '../images/config.png';
 import notification from '../images/notification.png';
 import { getUser } from '../services/userAPI';
@@ -125,9 +124,13 @@ class Search extends React.Component {
   }
 
   renderInicialScreen() {
-    return <div>
-      <img src={ trybetunes } alt="" className="imagem-inicial"/>
+    return (
+    <div className="inicialScreen">
+      <div className="superiorInicialScreen">
+        { this.renderSearchArea() }
+      </div>
     </div>
+    )
   }
 
   render() {
@@ -136,7 +139,6 @@ class Search extends React.Component {
     return (
       <div data-testid="page-search" className="search">
         <Header />
-        { this.renderSearchArea() }
         { albumAtual.length !== 0 && <h2 className="result-text">{ result }</h2> }
         { albumAtual.length === 0 ? this.renderInicialScreen() : this.renderAlbuns() }
       </div>
