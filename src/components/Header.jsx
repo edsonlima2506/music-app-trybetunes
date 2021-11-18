@@ -8,12 +8,34 @@ import profileIcon from '../images/icone.png';
 import podcast from '../images/podcast.png';
 import audiobook from '../images/audiobook.png';
 import videoclip from '../images/videoclip.png';
-import envio from '../images/envio.png';
-import spotify from '../images/spotify.png'
+import spotify from '../images/spotify.png';
+import getMusics from '../services/musicsAPI';
+const logoPrincipalSong = "https://data.whicdn.com/images/112018283/original.jpg";
+const backgroundPrincipalSong = "https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
 class Header extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      music: ''
+    }
+
+    this.showMusic = this.showMusic.bind(this);
+  }
+
+  componentDidMount() {
+    this.showMusic()
+  }
+
+  showMusic = async () => {
+    const albumResult = await getMusics("548656698");
+    const musicPrincipal = albumResult[4];
+    this.setState({ music: musicPrincipal });
+  }
 
   render() {
+    const { music } = this.state;
     return (
       <aside data-testid="header-component" className="menu-lateral">
           <div className="balls">
@@ -72,15 +94,25 @@ class Header extends React.Component {
             <img src={ videoclip } alt="video" className="icon" />
             Video clipes
             </Link>
-            <Link
-          to="/search"
-          data-testid="link-to-profile"
-          className="link-nav">
-            <img src={ envio } alt="envio" className="icon" />
-            Seus uploads
-            </Link>
         </nav>
-        <div className="copy">&copy; <h3>Edson Lima</h3></div>
+        <img src={ backgroundPrincipalSong } alt="" className="backgroundPrincipalSong" />
+        <div className="principalSong">
+          <img src={ logoPrincipalSong } alt="" className="logoPrincipalSong" />
+          <span>
+            <h1>Sweater Weather</h1>
+            <h2>The Neighbourhood</h2>
+            <audio src={ music.previewUrl }
+            controls
+            className="audioPrincipalSong"
+            >
+              <track kind="captions" />
+            O seu navegador não suporta o elemento
+            {' '}
+            <code>audio</code>
+            .
+            </audio>
+          </span>
+        </div>
       </aside>
     );
   }

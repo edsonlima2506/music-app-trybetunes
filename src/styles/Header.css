@@ -89,15 +89,43 @@
     margin-left: -210px;
 }
 
-.copy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.principalSong {
+    width: 100%; height: 130px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #ffffff30;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     position: absolute;
+    z-index: 1;
     bottom: 0;
-    color: #444444;
+    display: flex;
+    align-items: center;
 }
 
-.copy h3 {
-    margin-left: 5px;
+.backgroundPrincipalSong {
+    width: 100%; height: 130px;
+    border-radius: 10px 10px 0px 0px;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+}
+
+.principalSong h2 {
+    font-size: 10px;
+}
+
+.logoPrincipalSong {
+    width: 70px; width: 70px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.audioPrincipalSong {
+    width: 200px; height: 20px;
+    border-radius: 0;
+    margin-left: -5px;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
 }
