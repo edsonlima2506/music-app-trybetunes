@@ -94,31 +94,33 @@ class Search extends React.Component {
     const { buttonDisable, userName } = this.state;
     return <form>
     <div className="search-input-button">
-      <input
-        id="inputMusic"
-        type="text"
-        data-testid="search-artist-input"
-        onChange={ this.enableButon }
-        className="input-search"
-        placeholder="Busque por seu artista favorito"
-      />
-      <button
-        type="button"
-        data-testid="search-artist-button"
-        disabled={ buttonDisable }
-        onClick={ this.searchMusic }
-        className="button-search"
-      >
-        <img src={ search } alt="lupa" className="icon"/>
-      </button>
-      <div className="icons">
+      <span className="center-flex">
+        <input
+          id="inputMusic"
+          type="text"
+          data-testid="search-artist-input"
+          onChange={ this.enableButon }
+          className="input-search"
+          placeholder="Busque por seu artista favorito"
+        />
+        <button
+          type="button"
+          data-testid="search-artist-button"
+          disabled={ buttonDisable }
+          onClick={ this.searchMusic }
+          className="button-search"
+        >
+          <img src={ search } alt="lupa" className="icon"/>
+        </button>
+      </span>
+      <span className="center-flex">
+        <div className="user-div">
+          <img src={ profile } alt="lupa" className="user-icon" />
+          <h2>{ `Olá, ${ userName }!` }</h2>
+        </div>
         <img src={ config } alt="engrenagem" className="icon"/>
         <img src={ notification } alt="bell" className="icon"/>
-      </div>
-      <div className="user-div">
-        <img src={ profile } alt="lupa" className="user-icon" />
-        <h2>{ `Olá, ${ userName }!` }</h2>
-      </div>
+      </span>
     </div>
   </form>
   }

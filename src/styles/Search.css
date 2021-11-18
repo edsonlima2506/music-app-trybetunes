@@ -18,10 +18,11 @@ body {
 }
 
 .input-search {
-    border-radius: 20px;
-    border: none;
+    border-radius: 5px;
+    border: 1px solid #939393;
     width: 400px; height: 40px;
-    color: #313133;
+    background-color: #3131338e;
+    color: #fff;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
     padding-left: 10px;
@@ -107,18 +108,20 @@ body {
     width: 150px; height: 50px;
     background-color: #262626;
     border-radius: 10px;
-    margin-left: 30%;
-    margin-right: 10%;
+    padding: 5px;
 }
 
 .user-div h2 {
     color: #ffffff;
     font-size: small;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .user-icon {
     width: 40px;
-    border-radius: 3px;
+    border-radius: 50%;
 }
 
 .superiorInicialScreen {
@@ -128,4 +131,10 @@ body {
     background-image: url("https://images.pexels.com/photos/2078076/pexels-photo-2078076.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: cover;
     background-position: center;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
