@@ -7,6 +7,8 @@ import play from '../images/play.png';
 import profile from '../images/perfil.png';
 import config from '../images/config.png';
 import notification from '../images/notification.png';
+import verify from '../images/verificar.png';
+import fone from '../images/fone.png';
 import { getUser } from '../services/userAPI';
 import '../styles/Search.css';
 import '../styles/Mobile.css';
@@ -70,8 +72,10 @@ class Search extends React.Component {
   }
 
   renderAlbuns() {
+    this.renderSearchArea()
     const { albumAtual } = this.state;
-    return <div className="albums-cards"> { albumAtual.map((collection) => (
+    return <div className="albums-cards"> 
+    { albumAtual.map((collection) => (
       <section key={ collection.collectionId } className="album-card">
         <span className="image-infos">
           <img src={ collection.artworkUrl100 } alt="imagem album" className="album-image qualidade"/>
@@ -130,19 +134,28 @@ class Search extends React.Component {
     <div className="inicialScreen">
       <div className="superiorInicialScreen">
         { this.renderSearchArea() }
+        <p>Destaque da semana</p>
+        <span className="contentSuperiorScreen">
+          <h1>Sweater Weather</h1>
+          <img src={ verify } alt=""  className="icon"/>
+        </span>
+        <span className="secundaryContentSuperiorScreen">
+          <img src={ fone } alt="" className="icon"/>
+          <h2>11,184,817</h2>
+          <p>Reproduções este mês</p>
+        </span>
       </div>
     </div>
     )
   }
 
   render() {
-    const { resultadoDaBuscaTexto, albumAtual } = this.state;
-    const result = `Exibindo álbuns de: ${resultadoDaBuscaTexto}`;
+    const { albumAtual } = this.state;
     return (
       <div data-testid="page-search" className="search">
         <Header />
-        { albumAtual.length !== 0 && <h2 className="result-text">{ result }</h2> }
-        { albumAtual.length === 0 ? this.renderInicialScreen() : this.renderAlbuns() }
+        {  this.renderInicialScreen() }
+        { albumAtual.length !== 0 && this.renderAlbuns() }
       </div>
     );
   }
