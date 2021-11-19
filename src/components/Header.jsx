@@ -11,7 +11,6 @@ import videoclip from '../images/videoclip.png';
 import spotify from '../images/spotify.png';
 import getMusics from '../services/musicsAPI';
 const logoPrincipalSong = "https://data.whicdn.com/images/112018283/original.jpg";
-const backgroundPrincipalSong = "https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 
 class Header extends React.Component {
   constructor() {
@@ -95,7 +94,7 @@ class Header extends React.Component {
             Video clipes
             </Link>
         </nav>
-        <img src={ backgroundPrincipalSong } alt="" className="backgroundPrincipalSong" />
+        {/* <img src={ backgroundPrincipalSong } alt="" className="backgroundPrincipalSong" /> */}
         <div className="principalSong">
           <img src={ logoPrincipalSong } alt="" className="logoPrincipalSong" />
           <span>
