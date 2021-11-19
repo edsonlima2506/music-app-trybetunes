@@ -37,11 +37,11 @@ body {
     margin-left: 10px;
 }
 
-.albums-cards {
+.album-cards {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 280px;
+    margin-top: 250px;
     margin-left: 320px;
 }
 
@@ -165,6 +165,7 @@ body {
     margin: 0;
     font-weight: 300;
     font-family: Arial, Helvetica, sans-serif;
+    color: #1ED75F;
 }
 
 .mainContentInicialScreen {
@@ -179,14 +180,45 @@ body {
 .mainContentInicialScreen section {
     width: 200px; height: 250px;
     background-color: #000;
+    color: #fff;
     margin-top: 20px;
     margin-right: 40px;
     margin-left: 10px;
     border-radius: 10px 10px 0 0;
 }
 
-.mainContentInicialScreen section img {
+.mainContentInicialScreen section .artistPic {
     width: 100%; height: 45%;
     border-radius: 10px 10px 0px 0px;
     filter: opacity(0.7);
+}
+
+.mainContentInicialScreen section h1 {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.playArtistCard {
+    width: 50px;
+    position: relative;
+    margin-top: -30px;
+    margin-left: 38%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.playArtistCard:hover {
+    filter:drop-shadow(0 0 15px #1ED75F);
+}
+
+.listenersArtists {
+    display: flex;
+    margin-top: 15px;
+}
+
+.listenersArtists p {
+    font-weight: 300;
+    align-items: center;
+    color: #1ED75F;
+    margin-top: 2px;
 }

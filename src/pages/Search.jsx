@@ -35,6 +35,7 @@ class Search extends React.Component {
     this.renderAlbuns = this.renderAlbuns.bind(this);
     this.renderSearchArea = this.renderSearchArea.bind(this);
     this.renderInicialScreen = this.renderInicialScreen.bind(this);
+    this.renderSuperiorInicialScreen = this.renderSuperiorInicialScreen.bind(this);
   }
 
   componentDidMount() {
@@ -75,27 +76,48 @@ class Search extends React.Component {
     });
   }
 
-  renderAlbuns() {
-    this.renderSearchArea()
-    const { albumAtual } = this.state;
-    return <div className="albums-cards"> 
-    { albumAtual.map((collection) => (
-      <section key={ collection.collectionId } className="album-card">
-        <span className="image-infos">
-          <img src={ collection.artworkUrl100 } alt="imagem album" className="album-image qualidade"/>
-          <span>
-            <h3 className="album-name info">{ collection.collectionName }</h3>
-            <h4 className="artist-name info">{ collection.artistName }</h4>
-            <Link
-              to={ `/album/${collection.collectionId}` }
-              data-testid={ `link-to-album-${collection.collectionId}` }
-              >
-              <img src={ play } alt="" className="play" />
-            </Link>
-          </span>
+  renderSuperiorInicialScreen() {
+    return (
+      <div className="superiorInicialScreen">
+        { this.renderSearchArea() }
+        <p>Destaque da semana</p>
+        <span className="contentSuperiorScreen">
+          <h1>Sweater Weather</h1>
+          <img src={ verify } alt=""  className="icon"/>
         </span>
-      </section>
-    )) } </div>
+        <span className="secundaryContentSuperiorScreen">
+          <img src={ fone } alt="" className="icon"/>
+          <h2>11,184,817</h2>
+          <p>Reproduções este mês</p>
+        </span>
+      </div>  
+    );
+  }
+
+  renderAlbuns() {
+    const { albumAtual } = this.state;
+    return <div> 
+    { this.renderSuperiorInicialScreen() }
+    <div className="album-cards">
+      { albumAtual.map((collection) => (
+        <section key={ collection.collectionId } className="album-card">
+          <span className="image-infos">
+            <img src={ collection.artworkUrl100 } alt="imagem album" className="album-image qualidade"/>
+            <span>
+              <h3 className="album-name info">{ collection.collectionName }</h3>
+              <h4 className="artist-name info">{ collection.artistName }</h4>
+              <Link
+                to={ `/album/${collection.collectionId}` }
+                data-testid={ `link-to-album-${collection.collectionId}` }
+                >
+                <img src={ play } alt="" className="play" />
+              </Link>
+            </span>
+          </span>
+        </section>
+      )) } 
+      </div>
+    </div>
   }
 
   renderSearchArea() {
@@ -136,31 +158,43 @@ class Search extends React.Component {
   renderInicialScreen() {
     return (
     <div className="inicialScreen">
-      <div className="superiorInicialScreen">
-        { this.renderSearchArea() }
-        <p>Destaque da semana</p>
-        <span className="contentSuperiorScreen">
-          <h1>Sweater Weather</h1>
-          <img src={ verify } alt=""  className="icon"/>
-        </span>
-        <span className="secundaryContentSuperiorScreen">
-          <img src={ fone } alt="" className="icon"/>
-          <h2>11,184,817</h2>
-          <p>Reproduções este mês</p>
-        </span>
-      </div>  
+      { this.renderSuperiorInicialScreen() }
       <div className="mainContentInicialScreen">
         <section>
-          <img src={ negrali } alt="" />
+          <img src={ negrali } alt="" className="artistPic"/>
+          <img src={ play } alt="" className="playArtistCard"/>
+          <h1>Negra Li</h1>
+          <div className="listenersArtists">
+            <img src={ fone } alt="" className="icon"/>
+            <p>5,275,950</p>
+          </div>
         </section>
         <section>
-          <img src={ arlindo } alt="" />
+          <img src={ arlindo } alt="" className="artistPic"/>
+          <img src={ play } alt="" className="playArtistCard"/>
+          <h1>Arlindo Cruz</h1>
+          <div className="listenersArtists">
+            <img src={ fone } alt="" className="icon"/>
+            <p>15,129,741</p>
+          </div>
         </section>
         <section>
-          <img src={ djonga } alt="" />
+          <img src={ djonga } alt="" className="artistPic"/>
+          <img src={ play } alt="" className="playArtistCard"/>
+          <h1>Djonga</h1>
+          <div className="listenersArtists">
+            <img src={ fone } alt="" className="icon"/>
+            <p>177,952,863</p>
+          </div>
         </section>
         <section>
-          <img src={ emicida } alt="" />
+          <img src={ emicida } alt="" className="artistPic"/>
+          <img src={ play } alt="" className="playArtistCard"/>
+          <h1>Emicida</h1>
+          <div className="listenersArtists">
+            <img src={ fone } alt="" className="icon"/>
+            <p>125,445,397</p>
+          </div>
         </section>
       </div>
     </div>
@@ -172,8 +206,7 @@ class Search extends React.Component {
     return (
       <div data-testid="page-search" className="search">
         <Header />
-        {  this.renderInicialScreen() }
-        { albumAtual.length !== 0 && this.renderAlbuns() }
+        { albumAtual.length !== 0 ? this.renderAlbuns() : this.renderInicialScreen() }
       </div>
     );
   }
