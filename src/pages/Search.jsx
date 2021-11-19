@@ -12,6 +12,10 @@ import fone from '../images/fone.png';
 import { getUser } from '../services/userAPI';
 import '../styles/Search.css';
 import '../styles/Mobile.css';
+const negrali = "https://www.jornaldorap.com.br/wp-content/uploads/2020/10/negra-li-elle-brasil.jpg";
+const arlindo = "https://www.ecp.org.br/wp-content/uploads/2017/12/arlindo_cruz_2014-c2-bdwashington_possato0184.jpg";
+const djonga = "https://ogimg.infoglobo.com.br/in/24367056-73a-f6d/FT1086A/87575815_SCO-rapper-Djonga.jpg";
+const emicida = "https://files.nsctotal.com.br/s3fs-public/styles/teaser_image_style/public/graphql-upload-files/Emicida_1.jpg?NeintMhzidhVBdoJAJyfB9vt6SvP9YTE&itok=vxQdYXxt";
 
 class Search extends React.Component {
   constructor() {
@@ -144,6 +148,20 @@ class Search extends React.Component {
           <h2>11,184,817</h2>
           <p>Reproduções este mês</p>
         </span>
+      </div>  
+      <div className="mainContentInicialScreen">
+        <section>
+          <img src={ negrali } alt="" />
+        </section>
+        <section>
+          <img src={ arlindo } alt="" />
+        </section>
+        <section>
+          <img src={ djonga } alt="" />
+        </section>
+        <section>
+          <img src={ emicida } alt="" />
+        </section>
       </div>
     </div>
     )

@@ -166,3 +166,27 @@ body {
     font-weight: 300;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.mainContentInicialScreen {
+    margin-left: 350px;
+    margin-top: 300px;
+    width: 70%; height: 350px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.mainContentInicialScreen section {
+    width: 200px; height: 250px;
+    background-color: #000;
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-left: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.mainContentInicialScreen section img {
+    width: 100%; height: 45%;
+    border-radius: 10px 10px 0px 0px;
+    filter: opacity(0.7);
+}
