@@ -12,7 +12,7 @@ audio {
     display: flex;
     align-items: center;
     margin-top: 15px;
-    width: 90%;
+    width: 90%; height: 70px;
     padding: 10px;
     border-radius: 5px;
 }
@@ -23,8 +23,12 @@ audio {
     margin-left: 10px;
 }
 
-.music-player-name input {
-    margin-left: 10px;
+.music-player-name img {
+    cursor: pointer;
+}
+
+.music-player-name img:hover {
+    opacity: 0.5;
 }
 
 .music-player-name:hover {

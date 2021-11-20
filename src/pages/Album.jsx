@@ -13,11 +13,16 @@ class Album extends React.Component {
       albumName: '',
       albumMusics: [],
       haveAlbum: false,
+      musicName: '',
+      previewUrl: '',
+      image: '',
+      autoPlay: false,
     };
 
     this.showMusic = this.showMusic.bind(this);
     this.renderAlbum = this.renderAlbum.bind(this);
     this.renderMusics = this.renderMusics.bind(this);
+    this.playMusic = this.playMusic.bind(this);
   }
 
   componentDidMount = async () => {
@@ -41,6 +46,15 @@ class Album extends React.Component {
     }
   }
 
+  playMusic({ target }) {
+    this.setState({
+      musicName: target.alt,
+      previewUrl: target.className,
+      image: target.src,
+      autoPlay: true,
+    });
+  }
+
   renderAlbum() {
     const { artistName, albumName, albumImage } = this.state;
     return (
@@ -57,22 +71,28 @@ class Album extends React.Component {
   renderMusics() {
     const { albumMusics } = this.state;
     const musics = albumMusics.slice(1);
-    console.log(musics);
     return (musics.map((music) => (<MusicCard
       objMusic={ music }
       key={ music.trackId }
       trackName={ music.trackName }
       previewUrl={ music.previewUrl }
       trackId={ music.trackId }
+      playMusic={ this.playMusic }
     />))
     );
   }
 
   render() {
-    const { haveAlbum } = this.state;
+    const { haveAlbum, artistName, musicName, image, previewUrl, autoPlay } = this.state;
     return (
       <div data-testid="page-album">
-        <Header />
+        <Header 
+          artistName={ artistName }
+          musicName={ musicName }
+          musicImage={ image }
+          musicPreview={ previewUrl }
+          autoPlay={ autoPlay }
+         />
         <div className="album">
           { haveAlbum && this.renderAlbum() }
           <div className="musics">

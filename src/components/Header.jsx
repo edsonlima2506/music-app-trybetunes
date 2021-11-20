@@ -10,7 +10,6 @@ import audiobook from '../images/audiobook.png';
 import videoclip from '../images/videoclip.png';
 import spotify from '../images/spotify.png';
 import getMusics from '../services/musicsAPI';
-const logoPrincipalSong = "https://data.whicdn.com/images/112018283/original.jpg";
 
 class Header extends React.Component {
   constructor() {
@@ -34,7 +33,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { music } = this.state;
+    const { artistName, musicName, musicImage, musicPreview, autoPlay } = this.props;
     return (
       <aside data-testid="header-component" className="menu-lateral">
           <div className="balls">
@@ -96,13 +95,14 @@ class Header extends React.Component {
         </nav>
         {/* <img src={ backgroundPrincipalSong } alt="" className="backgroundPrincipalSong" /> */}
         <div className="principalSong">
-          <img src={ logoPrincipalSong } alt="" className="logoPrincipalSong" />
+          <img src={ musicImage } alt="" className="logoPrincipalSong" />
           <span>
-            <h1>Sweater Weather</h1>
-            <h2>The Neighbourhood</h2>
-            <audio src={ music.previewUrl }
+            <h1>{ musicName }</h1>
+            <h2>{ artistName }</h2>
+            <audio src={ musicPreview }
             controls
             className="audioPrincipalSong"
+            autoPlay={ autoPlay }
             >
               <track kind="captions" />
             O seu navegador não suporta o elemento

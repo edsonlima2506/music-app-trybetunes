@@ -47,12 +47,18 @@ class MusicCard extends React.Component {
   }
 
   render() {
-    const { objMusic, trackId } = this.props;
+    const { objMusic, trackId, playMusic } = this.props;
     const { loading, isFavoriteSong } = this.state;
     return (
       <div>
         <div key={ objMusic.trackName } className="music-player-name">
-          <img src={ objMusic.artworkUrl60 } alt="" />
+          <img
+          src={ objMusic.artworkUrl60 }
+          alt={ objMusic.trackName }
+          className={ objMusic.previewUrl }
+          onClick={ playMusic }
+          value={ objMusic.trackName }
+          />
           <p>{ objMusic.trackName }</p>
           <audio
             data-testid="audio-component"
