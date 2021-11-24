@@ -21,7 +21,7 @@ class Header extends React.Component {
 
   renderTopHeader() {
     return(
-      <div>
+      <div className="topHeader">
         <div className="balls">
           <div className="ball red"></div>
           <div className="ball yellow"></div>
