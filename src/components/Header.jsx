@@ -9,7 +9,6 @@ import podcast from '../images/podcast.png';
 import audiobook from '../images/audiobook.png';
 import videoclip from '../images/videoclip.png';
 import spotify from '../images/spotify.png';
-import getMusics from '../services/musicsAPI';
 
 class Header extends React.Component {
   constructor() {
@@ -18,83 +17,83 @@ class Header extends React.Component {
     this.state = {
       music: ''
     }
-
-    this.showMusic = this.showMusic.bind(this);
   }
 
-  componentDidMount() {
-    this.showMusic()
-  }
-
-  showMusic = async () => {
-    const albumResult = await getMusics("548656698");
-    const musicPrincipal = albumResult[4];
-    this.setState({ music: musicPrincipal });
-  }
-
-  render() {
-    const { artistName, musicName, musicImage, musicPreview, autoPlay } = this.props;
-    return (
-      <aside data-testid="header-component" className="menu-lateral">
-          <div className="balls">
-            <div className="ball red"></div>
-            <div className="ball yellow"></div>
-            <div className="ball green"></div>
+  renderTopHeader() {
+    return(
+      <div>
+        <div className="balls">
+          <div className="ball red"></div>
+          <div className="ball yellow"></div>
+          <div className="ball green"></div>
           </div>
           <div className="logoAndIcon">
-            <img src={ spotify } alt="logo spotify" className="logo"/>
-            &#9778;
-          </div>
-          <p className="menuText">MENU</p>
-        <nav>
-          <Link
-            to="/search"
-            data-testid="link-to-search"
-            className="link-nav">
-              <img src={ search } alt="lupa" className="icon" />
-              Pesquisar
-          </Link>
-          <Link
-          to="/favorites"
-          data-testid="link-to-favorites"
-          className="link-nav">
-            <img src={ favorite } alt="coração" className="icon" />
-            Favoritas
-          </Link>
-          <Link
-          to="/profile"
-          data-testid="link-to-profile"
-          className="link-nav">
-            <img src={ profileIcon } alt="pessoa" className="icon" />
-            Perfil
+          <img src={ spotify } alt="logo spotify" className="logo"/>
+          &#9778;
+        </div>
+      </div>
+    );
+  }
+
+  renderMenu() {
+    return (
+      <div>
+        <p className="menuText">MENU</p>
+          <nav>
+            <Link
+              to="/search"
+              data-testid="link-to-search"
+              className="link-nav">
+                <img src={ search } alt="lupa" className="icon" />
+                Pesquisar
             </Link>
-        </nav>
-        <p className="em-breve">EM BREVE</p>
-        <nav>
-          <Link
-            to="/search"
-            data-testid="link-to-search"
+            <Link
+            to="/favorites"
+            data-testid="link-to-favorites"
             className="link-nav">
-              <img src={ podcast } alt="microfone" className="icon" />
-              Podcasts
-          </Link>
-          <Link
-          to="/search"
-          data-testid="link-to-favorites"
-          className="link-nav">
-            <img src={ audiobook } alt="livro" className="icon" />
-            AudioBooks
-          </Link>
-          <Link
-          to="/search"
-          data-testid="link-to-profile"
-          className="link-nav">
-            <img src={ videoclip } alt="video" className="icon" />
-            Video clipes
+              <img src={ favorite } alt="coração" className="icon" />
+              Favoritas
             </Link>
-        </nav>
-        {/* <img src={ backgroundPrincipalSong } alt="" className="backgroundPrincipalSong" /> */}
-        <div className="principalSong">
+            <Link
+            to="/profile"
+            data-testid="link-to-profile"
+            className="link-nav">
+              <img src={ profileIcon } alt="pessoa" className="icon" />
+              Perfil
+              </Link>
+          </nav>
+          <p className="em-breve">EM BREVE</p>
+          <nav>
+            <Link
+              to="/search"
+              data-testid="link-to-search"
+              className="link-nav">
+                <img src={ podcast } alt="microfone" className="icon" />
+                Podcasts
+            </Link>
+            <Link
+            to="/search"
+            data-testid="link-to-favorites"
+            className="link-nav">
+              <img src={ audiobook } alt="livro" className="icon" />
+              AudioBooks
+            </Link>
+            <Link
+            to="/search"
+            data-testid="link-to-profile"
+            className="link-nav">
+              <img src={ videoclip } alt="video" className="icon" />
+              Video clipes
+              </Link>
+          </nav>
+        </div>
+    );
+  }
+
+  renderMusicPlayer() {
+    const { artistName, musicName, musicImage, musicPreview, autoPlay } = this.props;
+    return (
+      <div className="principalSong">
           <img src={ musicImage } alt="" className="logoPrincipalSong" />
           <span>
             <h1>{ musicName }</h1>
@@ -112,7 +111,24 @@ class Header extends React.Component {
             </audio>
           </span>
         </div>
+    );
+  }
+
+  renderHeader() {
+    return (
+      <aside data-testid="header-component" className="menu-lateral">
+        { this.renderTopHeader() }
+        { this.renderMenu() }
+        { this.renderMusicPlayer() }
       </aside>
+    );
+  }
+
+  render() {
+    return (
+      <div>
+        { this.renderHeader() }
+      </div>
     );
   }
 }

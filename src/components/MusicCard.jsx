@@ -55,8 +55,7 @@ class MusicCard extends React.Component {
           <img
           src={ objMusic.artworkUrl60 }
           alt={ objMusic.trackName }
-          className={ objMusic.previewUrl }
-          onClick={ playMusic }
+          onClick={ () => playMusic(objMusic.artworkUrl60, objMusic.trackName, objMusic.previewUrl) }
           value={ objMusic.trackName }
           />
           <p>{ objMusic.trackName }</p>

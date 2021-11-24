@@ -46,11 +46,11 @@ class Album extends React.Component {
     }
   }
 
-  playMusic({ target }) {
+  playMusic(image, name, preview) {
     this.setState({
-      musicName: target.alt,
-      previewUrl: target.className,
-      image: target.src,
+      musicName: name,
+      previewUrl: preview,
+      image: image,
       autoPlay: true,
     });
   }

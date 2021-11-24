@@ -12,15 +12,15 @@ class Favorites extends React.Component {
       favoritesSongs: [],
     }
 
-    this.getMusics = this.getMusics.bind(this);
-    this.renderMusics = this.renderMusics.bind(this);
+    this.getMusics = this.getFavoriteMusics.bind(this);
+    this.renderMusics = this.renderFavoriteMusics.bind(this);
   }
 
   componentDidMount() {
-    this.getMusics();
+    this.getFavoriteMusics();
   }
 
-  async getMusics() {
+  async getFavoriteMusics() {
     const musicFavorites =  await getFavoriteSongs()
     console.log(`${musicFavorites} PRIMEIRO`);
     this.setState({
@@ -30,7 +30,7 @@ class Favorites extends React.Component {
     console.log(`${favoritesSongs} SEGUNDO`);
   }
 
-  renderMusics() {
+  renderFavoriteMusics() {
     const { favoritesSongs } = this.state
     console.log(`${favoritesSongs} TERCEIRO`);
     return (favoritesSongs.map((music) => (
@@ -53,7 +53,7 @@ class Favorites extends React.Component {
         <div className="favorite-musics">
           <h1>Você não cansa de ouvir:</h1>
           <div>
-            { favoritesSongs.length > 0 && this.renderMusics() }
+            { favoritesSongs.length > 0 && this.renderFavoriteMusics() }
           </div>
         </div>
       </div>
