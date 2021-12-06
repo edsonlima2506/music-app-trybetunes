@@ -1,7 +1,9 @@
 # Music App - TrybeTunes
 
-<p>O projeto TrybeTunes é uma plataforma de músicas! <br>
-  Onde é possível ouvir suas músicas favoritas e até favorita-las!</p>
+<p>O projeto TrybeTunes é uma plataforma de músicas inspirada no Spotify <br>
+    Nessa plataforma é possível buscar albuns de inumeros artistas <br>
+    e ouvir um breve preview da música, além de poder favoritar as melhores.
+</p>
   
 # Especificações tecnicas
 
