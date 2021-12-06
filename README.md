@@ -13,6 +13,8 @@ estados e eventos. Os testes foram feitos com RTL (React Test Library).
 
 # Resultado final:
 
+![Captura de tela de 2021-12-06 12-56-36](https://user-images.githubusercontent.com/81549048/144879060-f752bc44-c32c-426c-8537-6eb1d2eccc66.png)
+
 # Tecnologias
 
  
