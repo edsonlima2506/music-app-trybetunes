@@ -1,7 +1,7 @@
 # Music App - TrybeTunes
 
 <p>O projeto TrybeTunes é uma plataforma de músicas inspirada no Spotify <br>
-    Nessa plataforma é possível buscar albuns de inumeros artistas <br>
+    nessa plataforma é possível buscar albuns de inumeros artistas <br>
     e ouvir um breve preview da música, além de poder favoritar as melhores.
 </p>
   
