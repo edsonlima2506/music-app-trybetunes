@@ -1,0 +1,12 @@
+@startuml Basic Sample
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(admin, "Usuário")
+System_Boundary(c1, "Cotexto do Sistema") {
+    Container(web_app, "Music App", "REACT.JS", "O usuário pode escutar músicas do iTunes")
+}
+System(iTunes, "iTunes")
+
+Rel(admin, web_app, "Utiliza", "HTTPS")
+Rel(web_app, iTunes, "Obtém músicas", "API")
+@enduml
