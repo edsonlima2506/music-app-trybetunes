@@ -1,0 +1,24 @@
+@startuml Containers Music App
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(admin, "Usuário")
+System_Boundary(c1, "Cotexto do Sistema") {
+    Container(login, "Login", "", "O usuário faz login com email")
+    Container(pesquisa, "Tela Pesquisa", "", "O usuário pesquisa por artista e recebe os àlbuns")
+    Container(tela_album, "Tela Álbum", "", "Mostra as músicas do álbum clicado")
+    Container(favoritas, "Favoritas", "", "Mostra músicas favoritas")
+    Container(tela_usuario, "Tela Usuário", "", "Informações do usuário")
+    System(iTunes, "iTunes")
+    System(iTunesFavoritas, "iTunesFavoritas")
+}
+
+Rel_L(admin, login, "Utiliza", "HTTPS")
+Rel(login, pesquisa, "Redirecionado", "HTTPS")
+Rel_L(login, iTunes, "Login do usuário", "API")
+Rel_D(iTunes, pesquisa, "Obtém álbuns do artista", "API")
+Rel(pesquisa, tela_album, "Clica no album", "HTTPS")
+Rel(tela_album, iTunesFavoritas, "Favorita musica", "API")
+Rel(iTunesFavoritas, favoritas, "Recupera músicas favoritas", "API")
+Rel_L(iTunes, tela_usuario, "Recupera dados do usuário", "API")
+Rel_L(tela_usuario, iTunes, "Altera dados do usuário", "API")
+@enduml
