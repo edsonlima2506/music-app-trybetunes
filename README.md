@@ -1,7 +1,9 @@
 # Music App - TrybeTunes
 
-<p>O projeto TrybeTunes é uma plataforma de músicas! <br>
-  Onde é possível ouvir suas músicas favoritas e até favorita-las!</p>
+<p>O projeto TrybeTunes é uma plataforma de músicas inspirada no Spotify <br>
+    nessa plataforma é possível buscar albuns de inumeros artistas <br>
+    e ouvir um breve preview da música, além de poder favoritar as melhores.
+</p>
   
 # Especificações tecnicas
 
@@ -12,6 +14,8 @@ trabalhando com React Route para criação de páginas dinâmicas, componentes R
 estados e eventos. Os testes foram feitos com RTL (React Test Library).
 
 # Resultado final:
+
+![Captura de tela de 2021-12-06 12-56-36](https://user-images.githubusercontent.com/81549048/144879060-f752bc44-c32c-426c-8537-6eb1d2eccc66.png)
 
 # Tecnologias
 
