@@ -28,11 +28,7 @@ estados e eventos. Os testes foram feitos com RTL (React Test Library).
   <img align="center" alt="Edson-Canva" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" />
 </div>
 
-# Como acessar o projeto?
-
-Basta acessar o link: https://music-app-trybetunes.vercel.app/
-
-# Como posso acessar o código?
+# Instalando as dependências
 
 1- Clone o repositório com o comando: <br>
 git clone `git@github.com:edsonlima2506/music-app-trybetunes.git`
